@@ -1,0 +1,19 @@
+body {
+  background-color: #3474ff;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20%;
+}
+#btn {
+  text-align: center;
+}
+button {
+  background-color: gray;
+  color: white;
+  border-style: none;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  align-items: center;
+}

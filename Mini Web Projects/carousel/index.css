@@ -1,0 +1,39 @@
+body {
+  background-color: rgb(4, 110, 151);
+  height: 100vh;
+}
+.main {
+  display: flex;
+  width: auto;
+  height: 80%;
+  justify-content: center;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  height: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: rgb(4, 110, 151);
+  background-color: rgb(105, 176, 209);
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 50%;
+}
+
+.next {
+  right: 0;
+}
+
+.orderDot {
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  width: auto;
+  height: auto;
+  padding: 16px;
+  border-radius: 50%;
+}

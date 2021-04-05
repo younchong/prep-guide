@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  background-color: rgb(12, 141, 184);
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.inner img {
+  width: 80vh;
+}
+
+.prev,
+.next {
+  position: absolute;
+  font-size: 50px;
+  border-radius: 50%;
+  color: rgb(12, 141, 184);
+  background-color: rgb(129, 175, 218);
+  border: none;
+  outline: none;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.underBtn {
+  position: absolute;
+  bottom: -10%;
+}
+
+.underBtn input {
+  margin-right: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: rgb(12, 100, 129);
+  background-color: rgb(12, 100, 129);
+  border: none;
+}
+
+.underBtn input:focus {
+  background-color: rgb(3, 47, 97);
+  color: rgb(3, 47, 97);
+  border: none;
+  outline: none;
+}
