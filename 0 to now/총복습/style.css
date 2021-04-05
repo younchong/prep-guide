@@ -1,0 +1,22 @@
+h1{
+  text-align:center;
+  border: 5px solid yellow;
+  margin-bottom:0;
+  }
+#grid{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  border-bottom: 5px solid yellow;
+     }
+#content{
+  border-right: 5px solid yellow;
+  text-decoration:none;
+}
+p{
+  margin-top:0;
+}
+@media(max-width:500px){
+  #picture{
+    display:none;
+  }
+}

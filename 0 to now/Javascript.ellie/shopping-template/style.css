@@ -1,0 +1,77 @@
+:root {
+  /* color */
+  --color-black: #3f454d;
+  --color-white: #ffffff;
+  --color-blue: #3b88c3;
+  --color-yellow: #fbbe28;
+  --color-pink: #fd7f84;
+  --color-light-grey: #dfdfdf;
+
+  /*size*/
+  --button-size: 18px;
+  --btn-width: 50px;
+  --img-width: 50px;
+  --img-height: 50px;
+}
+
+body {
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.btn,
+.logo {
+  cursor: pointer;
+}
+.btn:hover,
+.logo:hover {
+  transform: scale(1.5);
+}
+
+.btn {
+  background-color: transparent;
+  outline: none;
+  border-style: none;
+  justify-content: space-between;
+}
+
+.blue {
+  background-color: var(--color-blue);
+  font-size: var(--button-size);
+}
+
+.yellow {
+  background-color: var(--color-yellow);
+  font-size: var(--button-size);
+}
+
+.pink {
+  background-color: var(--color-pink);
+  font-size: var(--button-size);
+}
+
+.items {
+  width: 60%;
+  height: 60%;
+  list-style: none;
+  padding-left: 0;
+  overflow-y: scroll;
+}
+
+.item {
+  background-color: var(--color-white);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.item__thumbnail {
+  width: var(--img-width);
+  height: var(--img-height);
+  font-size: 18px;
+  margin-left: 10px;
+}

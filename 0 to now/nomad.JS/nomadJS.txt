@@ -1,0 +1,17 @@
+21.03.07
+querySelector 는 class, tag, id 등을 찾은것중에 첫번째것을 가져온다. CSS방식으로
+querySelectorAll 은 똑같이 다 가져오지만 그 안에 있는 엘리먼트 전부를 가져와 array를 제공
+
+21.03.08
+JS의 local storage에 있는 모든 데이터를 string으로 저장하려고 함
+JSON 
+JS Object Notation
+데이터를 전달할때 JS가 다룰 수 있도록 object로 바꿔주는 기능
+
+appendChild() 와 prepend() 차이는
+거의 동일하게 작용하나 prepend()는 
+부모의 자식요소로 추가되나 맨 뒤가 아닌 맨 앞에 추가된다.
+
+여유가 생겨 3시간 정도 공부를 할 수 있었다. 집중도도 높았고 많이 배웠다.
+내일 nomad JS끝내고 다시 prep 진도 나갈 수 있겠다.
+주말에 블로그 꼭 만들자.

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+    // 가운데 글자 뺴내기
+          function solution(s) {
+            let answer = '';
+              if(s.length % 2 == 0){
+                let half = s.length/2
+                answer =  s.substr(half-1, half);
+              }
+              else{
+                answer = s.charAt(half + 0.5);
+              }
+
+            return answer;
+    }
+    // 거의 3일을 고민한 코딩테스트 통과... 56% 정확도라 조금더 다듬자...
+  //   간과했던 코드들 Math.ceil 올림
+    //                 Math.floor 내림 코드
+
+
+
+    </script>
+  </body>
+</html>

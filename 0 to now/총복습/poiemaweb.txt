@@ -1,0 +1,157 @@
+21.02.09
+<ol></ol>
+코드에 스타일을 지정할 수 있다.
+
+<ol style="1 A a I i"> 등과 같이
+시작값도 정할 수 있다.
+<ol start="3"> 
+그 뒤에 
+<li></li>값에 
+<li value="2"> 하면 2부터 시작 가능
+
+역순으로 하는 방법
+<ol reversed>
+
+CSS
+selector{
+           property:value;
+           }
+연동하는 방법
+1. link style    이상적이다. (html과 css의 역할을 구분해주기때문에)
+2. embedding style
+3. inline style       html style 프로퍼티에 css기술하는 방식
+
+selector
+1. 전체 셀렉터
+*  html전체요소 선택 (head포함)
+2.태그 셀렉터
+ 태그에 나타낸 p, a 등등 을 선택한다.
+3.ID 셀렉터
+ id를 지정하여 요소를 설정. id값은 유일한 값이다.
+4.클래스 셀렉터
+중복가능 >>> 재사용 측면에서 유리
+ex)
+.text-center { text-align : center; }
+.text-large ( font-size : large; }
+.text-red { color : red; }
+
+<p class="text-center">center</p>
+<p class="text-center text-large>center large</p>
+<p class="text-center text-large text-red>center large red</p>
+
+이렇게 코드를 작성하면 결과값이 중복되어서 나온다.
+
+5. 어트리뷰트 셀렉터
+지정된 어트리뷰트 갖는 요소를 꾸밈
+a[href] 이 값의 모든것을 꾸밈
+a[target="_blank"] 
+등 뒤에 뭐에 따라 많은 요소로 달라짐
+
+가상클래스 셀렉터 (Pseudo-Class Selector)
+부터 실습
+
+21.02.10
+hover 코드는 마우스를 올렸을때 색이 변함 (링크걸린 라인에)
+input 코드는 무언가를 적을 수 있는 네모 창이 생김
+
+href="#" 이란 자기 자신의 링크를 의미하는 듯 하다.
+<span> 은 <div> 요소와 비슷하게 의미가 없지만 디자인요소로 묶을때 사용하고 
+<div>보다 작은 단위인 단어를 묶을 때 사용한다.
+
+:nth-child(n) 
+ 구현안됨. 코드 똑같은데?
+
+잘 모르겠음
+:not 코드
+뒤에 () 배열하는 것 괄호 배열 순서
+
+이해가 안되는것
+:valid, invalid 코드작성시
+pattern 에 넣는 pattern="^\d{3}-\d{3,4}-\d{4}$" required>
+이 내용이 무엇이고
+그냥 010-1111-2222  넣었을 뿐인데
+valid가 되는 이유가 무엇인가?
+저 패턴이 어떤 의미를 가지고 있는 것인지?
+예측상 그냥 앞에 같은 숫자3, 4개 뒤에 같은 숫자ㅣ 4개로 이루어 지면
+valid가 인가된다.
+
+폰트사이즈
+px, em, %
+여기서 em은 배수로 앞에, 혹은 초기에 지정한 값에 배수로서 값이 나타난다.
+font size 미지정시 16px
+
+21.02.11
+viewport 란 웹페이지의 가시영역 ( 즉 내가 모니터 봤을때 그 웹페이지 영역)
+viewport 기준 다 1/100
+vw
+vh
+vmin (너비나 높이 중 작은쪽)
+vmax (너비나 높이 중 작은쪽)
+
+색상 표현 단위
+연습하면서 봤었던 #000과 같은 코드가
+색상표현 단위였다. 그냥 red orange등으로 표기보단
+좀 더 면밀한 표현을 가능하게 한다.
+코드 
+2.3 여기까지
+
+2.4
+박스모델 설명
+border style 지정시
+border-style : solid   >>>four side
+border-style: solid dashed >> horizontal, vertical
+border-style: solid dotted double >> top, side, vertical
+border-style: soldi dotted double dashed >> top right bottom left
+
+border-radius
+이용해서 곡률을 가진 border를 가질 수 있다.
+15px 75px 이렇게 두개 쓰면 타원형 가로 세로 높이로 나타냄
+
+박스 사이즈
+기본이 content-box 이고
+border-box로 지정하면 margin을 제외한 부분을 height와 width로 나타낼 수 있다.
+content-box borderbox 예제 background red 인거
+border-box가 값을 height와 width로 다 나타낼 수 있다고 하는데 
+차이를 잘 모르겠다. 전체적인 길이 width 600px다른건 보이는데
+왜 다른가지도 모르겠고.
+
+2.5 display property
+inline 레벨요소에서
+<span>은 띄어쓰기가 된다.
+예
+<span>s</span>
+<span>s</span> 이라고 적으면
+s s 로 나옴
+
+visibility 관련 내용 visible hidden collapse none
+그리고 table 설정과 tr 설정 
+
+21.02.12
+background shorthand 
+순서대로 color image repeat attachment position
+
+font shorthand
+font : fontstyle(optional) font-variant(optional) font-weight(optional)
+font-size(mandatory) / line-height(optional) font-family(mandatory)
+
+text overflow  ...으로 나타내는 ellipsis조건
+width 조건 정의
+overflow 조건이 visible 이외의 (hidden, collapse)등으로 정의
+white-space가 nowrap  pre로 정의 왜냐면 wrapping 적용 x이기 때문에
+
+word-break
+break-all 그냥 다 이어쓰기
+break-word  단어 살려둔다. 단어별로 띄어쓰기
+
+21.02.14
+css position
+relative와 absolute의 차이점
+
+relative는 parent 위치를 기준으로 움직이고
+absolute는 그와는 상관없이 (parent의 위치가 static이 아닌경우) 부모요소의 영역을
+벗어나 자유롭게 위치가능
+
+z-index가 높은 값을 가질수록 앞쪽에 위치하게된다.
+
+overflow 프로퍼티
+visibble hidden scroll auto

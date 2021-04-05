@@ -1,0 +1,22 @@
+의문 
+background-position : 600px 100px no-repeat;
+한거랑
+
+따로 빼서
+포지션은 같고
+background-repeat: no-repeat으로 한거랑
+차이가 나는데 그 이유?
+
+새로 알게 된것
+display: flex
+flex-direction:row   or   flex-direction:column
+justify-content:center
+
+세개가 같이 다닙니다.
+
+flex-wrap: wrap;
+
+마무리 
+https://new-year.spartacodingclub.kr/WGwn6sDjnadv/index.html
+
+html css 복습하기 좋은 시간이었다.

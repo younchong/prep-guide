@@ -1,0 +1,54 @@
+21.03.01
+알고리즘 풀다 부족함을 느껴 JS 다시 공부
+JS사용전 'use strict'; 
+적어두면 좀더 안정적으로 정확하게 JS를 사용할 수 있다.
+
+2. let 
+variable중 변수선언중
+var
+사용안하는 이유
+순서 없음
+블록 스코프 무시함
+그래서 요즘은 let을 사용
+write & read
+
+constant
+변수 한번 선언하면 바꿀수 없음. 변경불가 immutable data type
+read only
+
+symbol
+고유한 식별자 쓰고 싶을때 사용
+같은 string이라도 다르게 저장이 됨.
+
+dynamic typing
+string + number = string
+string이 우선순위에 항상 있지만 
+예외로
+string / string = number가 된다. 
+
+loop 반복문
+블록을 먼저 실행하려면 do - while을 실행하고
+조건이 맞을때만 블록을 실행하려면 while문 실행
+
+ // 9. Ternary operator: ?
+  //condition ? value1 : value2;       if 간단할때 주로 사용 간편하게.
+  //console.log(name === 'ellie'? 'yes' : 'no');
+
+이와 비슷하게 간단한 함수 
+Arrow function 
+const add = (a, b) => a+b;
+
+21.03.02
+getter and setters
+class사용자가 잘못 사용해도 방어적인 자세로 결과값을 주는 것.
+
+21.03.06
+reduce
+배열내의 값을 제공해준다. accumulated해서
+a, b, c, d 값이 있으면
+prev curr에 하나씩
+그리고 return값이 다시 prev 로 들어간다.
+return값을 설정해 주지않으면 prev값은 undefined
+
+즉, reduce는 모든값을 돌면서 값을 누적하면서 사용하는 것이다.
+reduceRight은 배열뒤쪽부터 값을 더한다.
