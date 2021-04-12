@@ -8,11 +8,11 @@
 </head>
 <body>
     <div class=start-btn>
-        <input type="button" value="Game start" onclick="makeNumber()" />
+        <input id="startBtn" type="button" value="Game start"  />
     </div>
-    <form for="getNumber" class="get-number" onsubmit="return false;" >
-        <input id="getNumber" type="text" required  placeholder="write the number" pattern="[0-9]{3}" />
-        <input id="btn" type="submit" required value="try" />
+    <form for="giveNumber" class="giveNumber-form" onsubmit="return false;" >
+        <input id="giveNumber" type="text" required  placeholder="write the number" pattern="[0-9]{3}" />
+        <input id="giveNumberBtn" type="submit" required value="try" />
     </form>
     
     <div id="onBoard">
