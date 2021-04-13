@@ -1,5 +1,47 @@
-.start-btn {
+body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.start-btn {
+  margin: 50px;
+}
+
+#startBtn {
+  font-size: 60px;
+  background-color: rgb(3, 207, 3);
+  border-color: none;
+}
+
+#startBtn:focus {
+  animation: rotate 2s ease-in-out;
+  outline: none;
+}
+
+@keyframes rotate {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotateX(360deg);
+  }
+}
+
+.numberForm {
+  display: flex;
+  flex-direction: column;
+}
+
+#giveNumber {
+  font-size: 50px;
+  text-align: center;
+}
+
+#giveNumberBtn {
+  font-size: 30px;
+  background-color: wheat;
+  border-color: wheat;
 }

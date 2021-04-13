@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Number Baseball-YG</title>
+    <link rel="stylesheet" href="index.css" />
 </head>
 <body>
     <div class=start-btn>
-        <input id="startBtn" type="button" value="Game start"  />
+        <input id="startBtn" required type="button" value="Game start"  />
     </div>
-    <form for="giveNumber" class="giveNumber-form" onsubmit="return false;" >
+    <form class="numberForm" for="giveNumber" class="giveNumber-form" onsubmit="return false"  >
         <input id="giveNumber" type="text" required  placeholder="write the number" pattern="[0-9]{3}" />
         <input id="giveNumberBtn" type="submit" required value="try" />
+        <input id="tryAgain" type="button" value="try again"  />
     </form>
     
     <div id="onBoard">
 
     </div>
 
-
+<audio id="winSound" src="BaseballBat.mp3"></audio>
 <script src="main.js"></script> 
 </body>
 </html>
