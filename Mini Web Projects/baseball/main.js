@@ -20,7 +20,7 @@ startBtn.addEventListener("click", makeNumber);
 
 function winSound(){
     let winSound= document.getElementById("winSound");
-    winSound.onplay;
+    winSound.play;
 }
 
 let count = 0;
