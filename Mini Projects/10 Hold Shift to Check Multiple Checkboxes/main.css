@@ -1,0 +1,24 @@
+body {
+  background-color: rgb(245, 63, 245);
+}
+.inbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+.item {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 40vw;
+  height: 8vh;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+input {
+  margin: 15px;
+}
