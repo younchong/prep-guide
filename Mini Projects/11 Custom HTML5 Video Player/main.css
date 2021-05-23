@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.progress {
+  flex: 10;
+  position: relative;
+  display: flex;
+  flex-basis: 100%;
+  width: 640px;
+  height: 5px;
+  transition: height 0.3s;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 5px 0;
+}
+
+.progress__filled {
+  width: 50%;
+  background: rgb(65, 122, 155);
+  flex: 0;
+  flex-basis: 0%;
+}
