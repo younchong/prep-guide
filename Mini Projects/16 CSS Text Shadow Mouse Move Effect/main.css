@@ -1,0 +1,15 @@
+body {
+  display: block;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 100px;
+  text-shadow: 10px 10px 0 black;
+}
