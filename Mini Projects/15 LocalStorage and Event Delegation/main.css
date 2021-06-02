@@ -1,0 +1,15 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+ul {
+  list-style: none;
+}
+
+.plates {
+  padding: 20px;
+  padding-left: 0;
+}
