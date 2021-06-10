@@ -1,3 +1,11 @@
+const startBtn= document.getElementById("startBtn");
+const giveNumberBtn = document.getElementById("giveNumberBtn");
+const giveNumber =document.getElementById("giveNumber");
+
+let count = 0;
+let out=0;
+let giveNumberArr= [];
+
 
 let list= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 let ansArr= [];
@@ -15,22 +23,21 @@ function makeNumber(){
     return console.log(ansArr);
     };
 
-let startBtn= document.getElementById("startBtn");
-startBtn.addEventListener("click", makeNumber);
+
+
 
 function winSound(){
     let winSound= document.getElementById("winSound");
-    winSound.play;
+    winSound.play();
 }
 
-let count = 0;
-let out=0;
-let giveNumberArr= [];
 function give(){
     let numbers = document.getElementById("giveNumber");
     let independence = numbers.value;
     giveNumberArr = independence.split("");
     count++;
+
+    giveNumber.value = null;
 
     if(independence.length!=3){
         count--;
@@ -51,8 +58,8 @@ let ball = 0;
             if(ansArr[i]==giveNumberArr[j] && i===j){
                 strike++;
                 if(strike===3){
-                alert("win")
                 winSound();
+                alert("win");
                 location.reload();}
             }else if(ansArr[i]==giveNumberArr[j]){
                 ball++;
@@ -65,15 +72,19 @@ let ball = 0;
             out++;
         }
         
-        document.querySelector("#onBoard").innerHTML=`<div class=onBoard-status> ${independence} count: ${count}, strike: ${strike}, ball: ${ball}, out: ${out} </div>`
+        const onBoard =document.querySelector("#onBoard");
+        const mLi = document.createElement("li");
+        
+        onBoard.append(mLi);
+        mLi.innerHTML = `<div class=onBoard-status> ${independence} count: ${count}, strike: ${strike}, ball: ${ball}, out: ${out} </div>`
     }
 
 
-let giveNumberBtn = document.getElementById("giveNumberBtn");
-giveNumberBtn.addEventListener("click", give);
-
+    
 function tryagain(){
     location.reload();
 }
 
+startBtn.addEventListener("click", makeNumber);
+giveNumberBtn.addEventListener("click", give);
 document.querySelector("#tryAgain").addEventListener("click", tryagain);

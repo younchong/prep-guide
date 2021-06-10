@@ -27,15 +27,6 @@ function writeDay(){
     let dayTitle = document.getElementById('day');
     dayTitle.innerText=day;
 }
-/*
-function writeSomething(a){
-    let Title = document.getElementById(a);
-    Title.innerText= a;
-}
-위 함수가 겹치는 부분이 많다.  dry
-그래서 중복되는 부분은 두고 변수부분만 함수에서 text로 받아서 대입하면 될 줄 알았는데 안된다.
-왜 안되는지 알아보고 고쳐보자.
-*/
 
 function writeMonYear(){
     let monTitle = document.getElementById('monYear');
@@ -141,7 +132,7 @@ function next(){
             let tableMain = document.getElementById('tableMain');
             monthCnt++;
             tBody.appendChild($tr);
-            //nBody로 하고 하면 appendChild가 적용이 안됨 이유 모르겠음. nBody내부요소로 넣고 싶은데 
+            
         }
 
 
