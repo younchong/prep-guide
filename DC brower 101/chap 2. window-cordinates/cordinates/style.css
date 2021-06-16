@@ -1,0 +1,26 @@
+body {
+  background-color: black;
+  margin: 0;
+}
+
+.mouseText {
+  color: white;
+  position: absolute;
+  font-size: 30px;
+}
+
+.horizon {
+  position: absolute;
+  width: 100vw;
+  height: 1px;
+  background: white;
+  opacity: 0.4;
+}
+
+.perpen {
+  position: absolute;
+  width: 1px;
+  height: 100vh;
+  background: white;
+  opacity: 0.4;
+}

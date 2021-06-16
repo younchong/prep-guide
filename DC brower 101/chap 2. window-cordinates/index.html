@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Cordinates</title>
+    <style>
+        body div:not(.btns, .special){
+            width: 35vw;
+            height: 30vh;
+            margin: 10px;
+            background-color: rgb(253, 203, 94);
+            }
+        
+            
+        
+        div.special{
+            width: 35vw;
+            height: 30vh;
+            margin: 10px;
+            background-color: red;
+        }
+
+        .btns{
+            position:fixed;
+            top: 20px;
+            right: 20px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="btns">
+        <button class="by">Scroll by 100px(y)</button>
+        <button class="to">Scroll to 100px(y)</button>
+        <button class="into">Scroll into special</button>
+    </div>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="special" ></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+
+    <script>
+        const special = document.querySelector(".special");
+        special.addEventListener("click", (e)=> {
+          console.log(special.getBoundingClientRect());
+        })
+         
+         /*
+         divs.forEach(function(div){
+             if(div.getBoundingClientRect(divs).top === 537.234375){
+             div.style.color= "blue";
+         }});
+
+         */
+         //question
+
+         const by = document.querySelector(".by"),
+            to = document.querySelector(".to"),
+            into = document.querySelector(".into");
+
+         by.addEventListener("click", (e)=>{
+             window.scrollBy({top: 100, behavior:"smooth"});
+         });
+
+         to.addEventListener("click", (e)=>{
+             window.scrollTo({top:100, behavior:"auto"});
+         });
+         into.addEventListener("click", (e)=>{
+             //window.scrollTo(0, special.offsetTop);
+             special.scrollIntoView({behavior:"smooth"});
+         });
+    </script>    
+</body>
+</html>
