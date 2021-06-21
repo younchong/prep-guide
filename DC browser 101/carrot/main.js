@@ -12,6 +12,7 @@ const bgm = document.querySelector("#bg");
 let stop;
 let countDown;
 let carrotCount;
+let timer;
 
 function makeBug(){
     const $bug = document.createElement("img");
@@ -44,6 +45,7 @@ function timeOut(){
     if(countDown === 0 || stop === true){
         time.textContent = countDown;     
          bgm.pause();
+         clearInterval(timer);
         /*
          afterMsg.setAttribute("style", `z-index: 1`);
         afterMsg.innerHTML = `
@@ -69,7 +71,7 @@ function timeOut(){
         <i data-id="again" class="fas fa-reply"></i>
         </button>
         ` 
-        
+        clearInterval(timer);
     }
 }
 
@@ -80,7 +82,7 @@ function gamePlay(){
     stop = false;
     countDown = 10;
     carrotCount = 10;
-    setInterval(timeOut, 1000);
+    timer = setInterval(timeOut, 1000);
     for(let i=0; i<10; i++){
     makeBug();
     makeCarrot();       
