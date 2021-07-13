@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave the doors open</title>
+    <style>
+        .stage{
+            width:70vw;
+            height: 70vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .door{
+            position: relative;
+            width: 100px;
+            height: 150px;
+        }
+        .door-back{
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            overflow: hidden;
+        }
+        .ilbuni{
+            position:absolute;
+            left:0;
+            bottom: 0;
+            width: 100px;
+            height: 100px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50% 100%;
+            transform: translate3D(100%, 0, 0);
+            transition: .5s .5s;
+            
+        }
+
+        .door:nth-child(1) .ilbuni{
+            background-image: url(images/ilbuni_1.png);
+            
+        }
+        .door:nth-child(2) .ilbuni{
+            background-image: url(images/ilbuni_2.png);
+            
+        }
+        .door:nth-child(3) .ilbuni{
+            background-image: url(images/ilbuni_3.png);
+            
+        }
+        
+        .door-body{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: 1s;
+            transform-origin: left;
+        }
+
+        .door:nth-child(1) .door-body{
+            background: rgba(255, 0 , 0, 0.7);
+        }
+        .door:nth-child(2) .door-body{
+            background: rgba(0, 255 , 0, 0.7);
+        }
+        .door:nth-child(3) .door-body{
+            background: rgba(0, 0, 255, 0.7);
+        }
+
+        .door-opened .door-body{
+            transform: perspective(800px) rotateY(-120deg);
+            
+        }
+        .door-opened .ilbuni{
+            transform: translate3d(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <div class="door">
+            <div class="door-back">
+                <div class="ilbuni"></div>
+            </div>
+            <div class="door-body"></div>
+        </div>
+        <div class="door">
+            <div class="door-back">
+                <div class="ilbuni"></div>
+            </div>
+            <div class="door-body"></div>
+        </div>
+        <div class="door">
+            <div class="door-back">
+                <div class="ilbuni"></div>
+            </div>
+            <div class="door-body"></div>
+        </div>
+    </div>
+    <script>
+        (function(){
+            const stage = document.querySelector(".stage");
+            let currentItem;
+
+            function active(elem){
+                elem.classList.add("door-opened");
+                console.log("he");
+            }
+
+            function inactive(elem){
+                elem.classList.remove("door-opened");
+            }
+
+            function clickHandler(e){
+                const targetElem = e.target;
+                const parent = targetElem.parentNode;
+                if(currentItem){
+                    inactive(currentItem);
+                }
+
+                if(parent.classList.contains("door")){
+                    active(parent);
+                    currentItem = parent;
+                }
+            }
+
+            stage.addEventListener("click", clickHandler)
+        })();
+    </script>
+
+</body>
+</html>

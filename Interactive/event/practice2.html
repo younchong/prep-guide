@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>click Event</title>
+    <style>
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .menu{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30vh auto;
+            background-color: pink;
+            padding: 5vw;
+            border-radius: 2.5vw;
+        }
+
+        img{
+            width: 45px;
+            height: 45px;
+        }
+
+        .menu-btn{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin:5px;
+            border-radius: 1vw;
+            background-color: thistle;
+            border-style: hidden;
+        }
+
+        @keyframes dementos {
+            from{
+                transform: scale(0);
+                opacity: 0;
+            }
+            to{
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+        }
+
+        #click-character{
+            position: absolute;
+            animation: dementos 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <button class="menu-btn" data-index="1">
+            <img src="images/ilbuni_1.png"/>
+                <span>1btn</span>
+        </button>
+        <button class="menu-btn b" data-index="2">
+            <img src="images/ilbuni_2.png"/>
+                <span>2btn</span>
+        </button>
+        <button class="menu-btn c" data-index="3">
+            <img src="images/ilbuni_3.png"/>
+                <span>3btn</span>
+        </button>
+    </div>
+    <script>
+        (function(){
+            const body = document.querySelector("body");
+            const btns = document.querySelectorAll("button");
+            let number;
+
+            function clickHandler(e){
+                let name =e.target.dataset.index
+                while(!name){
+                   name =e.target.parentNode.dataset.index;
+                }
+
+                number = name;
+                return name;
+            }
+            
+
+            function clickEvent(e){
+                if(number == undefined){
+                    number = 1;
+                }
+                const makeSpan = document.createElement("span");
+                makeSpan.setAttribute("id", "click-character");
+                makeSpan.innerHTML = `
+                <img src="images/ilbuni_${number}.png"/>
+                `;
+                makeSpan.style.top = `${e.clientY-22}px`;
+                makeSpan.style.left = `${e.clientX-22}px`;
+                body.append(makeSpan);
+                function removeIt(){
+                    const character = document.querySelector("#click-character");
+                    body.removeChild(character);
+                }
+                setTimeout(removeIt, 1000);
+            }   
+
+            btns.forEach(btns => btns.addEventListener("click", clickHandler));
+            window.addEventListener("click", clickEvent);
+        }
+        ())
+    </script>
+</body>
+</html>

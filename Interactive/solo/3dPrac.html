@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D practice</title>
+    <style>
+        body{
+            background: rgb(183, 14, 206);
+            height: 1000vh;
+        }
+        .world{
+            position: fixed;
+            top:0;
+            left:0;
+            width: 100vw;
+            height:100vh;
+            perspective: 1000px;
+        }
+        .stage{
+            position:absolute;
+            top:0;
+            left:0;
+            width: 100vw;
+            height:100vh;
+            transform-style: preserve-3d;
+        }
+        .house{
+            top:0;
+            left:0;
+            width: 100vw;
+            height:100vh;
+            transform-style: preserve-3d;
+            transform: translateZ(-400vw);
+        }
+        .wall{
+            position: absolute;
+            left:0;
+            top:0;
+            width: 100vw;
+            height:100vh;
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .wall-left{
+            width:1000vw;
+            transform: rotateY(90deg) translateZ(-500vw);
+        }
+        .wall-right{
+            width: 900vw;
+            transform: rotateY(90deg) translatez(-350vw);
+        }
+        .wall-front-A{
+            transform: translateZ(250vw);
+        }
+        .wall-front-B{
+            transform: translateZ(70vw);
+        }
+        .wall-front-C{
+            transform: translateZ(-110vw);
+        }
+        .wall-front-D{
+            transform: translateZ(-450vw);
+        }
+        .wall-content{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+        }
+        .wall-title{
+            font-size: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="world">
+        <div class="stage">
+            <div class="house">
+                <section class="wall wall-left"></section>
+                <section class="wall wall-right"></section>
+                <section class="wall wall-front-A">
+                    <div class="wall-content">
+                        <h2 class="wall-title">복</h2>
+                    </div>
+                </section>
+                <section class="wall wall-front-B">
+                    <div class="wall-content">
+                        <h2 class="wall-title">습</h2>
+                    </div>
+                </section>
+                <section class="wall wall-front-C">
+                    <div class="wall-content">
+                        <h2 class="wall-title">연</h2>
+                    </div>
+                </section>
+                <section class="wall wall-front-D">
+                    <div class="wall-content">
+                        <h2 class="wall-title">습</h2>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function(){
+            const stage = document.querySelector(".stage");
+            const house = document.querySelector(".house");
+            let scrollMax =  document.body.offsetHeight - window.innerHeight;;
+            function resizeCtr(){
+                let scrollMax =  document.body.offsetHeight - window.innerHeight;
+            }
+
+            window.addEventListener("resize", resizeCtr);
+            window.addEventListener("scroll", function(){
+                let scrollMove = pageYOffset / scrollMax*900 -400; 
+                house.style.transform = `translateZ(${scrollMove}vw)`;
+            });
+            window.addEventListener("mousemove", function(e){
+                let moveX = (e.clientX / window.innerWidth)*2 - 1;
+                let moveY = 1 - (e.clientY / window.innerHeight)*2
+                stage.style.transform = `rotateX(${moveY*10}deg) rotateY(${moveX*10}deg)`;
+            })
+        })();
+    </script>
+</body>
+</html>
