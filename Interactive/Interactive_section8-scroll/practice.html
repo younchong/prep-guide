@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Event</title>
+    <style>
+        body{
+            background-color: rebeccapurple;
+            height: 1000vh;
+        }
+        .content{
+            margin: 10vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .output{
+            position: fixed;
+            left:0;
+            top:0;
+            width: 100%;
+            font-size:2rem;
+            font-weight: 800;
+            background-color: rgba(0,0,0, 0.4);
+        }
+
+        .ilbuni{
+            width: 150px;
+            margin: 10px auto;
+            transition: 1s;
+        }
+        img{
+            max-width: 100%;
+        }
+
+
+        .zoom{
+            transform: scale(1.5) rotateZ(720deg);
+            
+        }
+        @keyframes ilbun-ani{
+            25%{
+                transform: translateX(0) scale(1.5); 
+            }
+            50%{
+                transform: translateX(100vw) scale(7);
+            }
+            100%{
+                transform: translateX(50vw) scale(1);
+            }
+        
+        }
+    </style>
+</head>
+<body>
+    <div class="output">output</div>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta officia iste nisi voluptates illo eos, unde corporis rerum nobis quo architecto eum doloremque praesentium molestias sed labore fuga temporibus beatae.</p>
+        <figure class="ilbuni">
+            <img src="images/ilbuni_3.png">
+        </figure>
+    </div>
+    <script>
+        (function(){
+            const ilbuni = document.querySelector(".ilbuni");
+            const output = document.querySelector(".output");
+            function scrEvent(){
+                let ilbuniPos = ilbuni.getBoundingClientRect();
+                output.innerHTML = ilbuniPos.top;
+                if(ilbuniPos.top < ilbuni.offsetTop * 0.6){
+                    ilbuni.classList.add("zoom");
+                }else{
+                    ilbuni.classList.remove("zoom");
+                }
+            }
+            ilbuni.addEventListener("transitionend", function(){
+                ilbuni.style.animation = "ilbun-ani 5s";
+            });
+            ilbuni.addEventListener("animationend", function(){
+                output.textContent="끝!";
+            })
+            window.addEventListener("scroll", scrEvent);
+        })()
+    </script>
+</body>
+</html>
