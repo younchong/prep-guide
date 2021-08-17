@@ -1,0 +1,102 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Patrick Hand', cursive;
+}
+
+.start-button{
+  width: 7vw;
+  margin: 1vh auto;
+  background-color: aliceblue;
+  border: none;
+  border-radius: 0.5em;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.2em;
+}
+
+.main-board {
+  position: relative;
+  width: 45vw;
+  height: 90vh;
+  margin: 0 auto;
+  border: 1px solid black;
+  background-image: url(img/start.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card-place.play{
+  visibility: hidden;
+}
+
+.card-place{
+  width: 100%;
+  height: 100%;
+  perspective: 700px;
+  transition: .5s;
+}
+
+.card{
+  position: relative;
+  width: 100px;
+  height: 140px;
+  margin: 1.5vh auto;
+  transform-style: preserve-3d;
+  transition: .3s;
+}
+
+.card.open{
+  transform: rotateY(180deg); 
+}
+
+.card-side{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:absolute;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5em;
+  font-size: 1.5rem;
+  backface-visibility: hidden;
+}
+
+.card-front{
+  z-index: 1;
+  transform: rotateY(0eg);
+  background-color: aliceblue;
+}
+
+.card-back img{
+  width: 100px;
+  height: 150px;
+  border-radius: 0.5em;
+}
+
+.card-back{
+  transform: rotateY(180deg);  
+}
+
+.result-board{
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  font-size: 4em;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+}
+
+.left-info{
+  display: inline-block;
+  margin: 0 5vw ;
+  font-size: 1.5em;
+}
+
