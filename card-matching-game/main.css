@@ -28,6 +28,14 @@ body{
   background-repeat: no-repeat;
 }
 
+.main-board .end{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45vw;
+  height: 80vh;
+}
+
 .card-place.play{
   visibility: hidden;
 }
@@ -35,7 +43,6 @@ body{
 .card-place{
   width: 100%;
   height: 100%;
-  perspective: 700px;
   transition: .5s;
 }
 
@@ -46,6 +53,7 @@ body{
   margin: 1.5vh auto;
   transform-style: preserve-3d;
   transition: .3s;
+  perspective: 700px;
 }
 
 .card.open{

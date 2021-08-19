@@ -1,4 +1,5 @@
 const $startButton = document.querySelector(".start-button");
+const $mainBoard = document.querySelector(".main-board");
 const $cardElems = document.querySelectorAll(".card");
 const $cardPlace = document.querySelector(".card-place");
 const $resultBoard = document.querySelector(".result-board");
@@ -30,6 +31,7 @@ let leftCard = 8;
 let clickedCard = [];
 let pickedImg = [];
 let timeIntervalId;
+let isWin;
 
 function makeFrontSide() {
   const $cardsFront = document.querySelectorAll(".card-front");
@@ -85,15 +87,26 @@ function handleCardClick(e) {
       bgm.pause();
       successAlarm.play();
       isPlaying = false;
-      finishHandler();
+      isWin = true;
+      finishHandler(isWin);
       clearInterval(timeIntervalId);
       $resultBoard.textContent = "KEN TOUCH THIS";
     }
   }
 }
 
-function finishHandler() {
+function finishHandler(result) {
+  const imgElem = document.createElement("img");
+  imgElem.classList.add("end");
   $cardPlace.classList.add("play");
+
+  if (result) {
+    imgElem.setAttribute("src", "img/success.png");
+    $mainBoard.append(imgElem);
+  } else {
+    imgElem.setAttribute("src", "img/failure.jpeg");
+    $mainBoard.append(imgElem);
+  }
 }
 
 function handleTimer() {
@@ -105,8 +118,9 @@ function handleTimer() {
       bgm.pause();
       failAlarm.play();
       clearInterval(timeIntervalId);
-      finishHandler();
       isPlaying = false;
+      isWin = false;
+      finishHandler(isWin);
       $resultBoard.textContent = "KEN'T TOUCH THIS";
     }
   }, defaultUpdateTime);
@@ -114,15 +128,15 @@ function handleTimer() {
 }
 
 function handleStartButton() {
+  const end = document.querySelector(".end");
   if (!isPlaying) {
     isPlaying = true;
     time = 50;
     leftCard = 8;
     clickedCard = [];
     pickedImg = [];
-    if ($cardElems[0].lastElementChild.firstChild) {
-      $cardElems.forEach(elem => elem.lastElementChild.firstChild.remove());
-    }
+    end && $mainBoard.removeChild(end);
+    $cardElems[0].lastElementChild.firstChild && $cardElems.forEach(elem => elem.lastElementChild.firstChild.remove());
     $cardElems.forEach(elem => elem.classList.remove("open"));
     $startButton.textContent = "PLAY AGAIN";
     $cardCounter.textContent = `LEFT KEN : ${leftCard}`;
