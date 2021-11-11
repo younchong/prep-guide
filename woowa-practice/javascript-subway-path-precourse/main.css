@@ -1,0 +1,14 @@
+div {
+  margin : 2em;
+
+}
+
+table {
+  width: auto;
+  margin-top: 2em;
+}
+
+th,
+td {
+  border : 1px solid #333;
+}
